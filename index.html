@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .letter {
+      max-width: 600px;
+      padding: 30px;
+      border: 1px solid #e06666;
+      border-radius: 20px;
+      background-color: rgba(255, 182, 193, 0.1);
+      font-size: 18px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .flower {
+      margin-top: 40px;
+      font-size: 50px;
+      animation: fadeIn 3s ease-in-out forwards, spin 5s infinite linear, glow 1.5s ease-in-out infinite;
+    }
+    #loveTag {
+      margin-top: 10px;
+      font-size: 24px;
+      color: #e06666;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 5s ease-in-out 3s forwards;
+    }
+    .typing {
+      border-right: .15em solid #e06666;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(60, end), blink .75s step-end infinite;
+      width: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 5px #f5e050); }
+      50% { filter: drop-shadow(0 0 15px #f5e050); }
+    }
+    .music-controls {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #e06666;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #f08080;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+  <source src="mymusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <div class="letter">
+    <div class="typing">
+    I just want to say how truly thankful I am for you.
+    For every good thing you've done for me — for taking care of me, for loving me so completely, and for being patient even on the days I struggle to love myself.
+    You deserve this flower — not just any flower, but one full of love, warmth, and everything beautiful, just like your soul.
+    You are my safe place. My home. And in every choice you make, please know that I am — and always will be — your first and biggest supporter.
+    Here's a flower that will never wither, just like my love for you.
+    Thank you for making love feel like peace.
+    Thank you for existing.
+    Forever yours,  
+    LOVE 🌸
+    </div>
+  </div>
+  <img src="sunflower.png" alt="Sunflower" class="flower">
+  <div class="music-controls">
+    <button onclick="toggleMusic()">Play Music</button>
+  </div>
+  <script>
+    const music = document.getElementById("bgMusic");
+    const button = document.querySelector("button");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        button.textContent = "Pause Music";
+      } else {
+        music.pause();
+        button.textContent = "Play Music";
+      }
+    }
+  </script>
+</body>
+</html>
